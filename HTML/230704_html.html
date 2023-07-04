@@ -27,6 +27,7 @@
     </div>
 
     <br/> <!-- 줄바꿈, breaking -->
+    <hr />
 
     <ul type="circle">
         <li>사과</li>
@@ -39,5 +40,50 @@
         <li>바나나</li>
         <li>포도</li>
     </ol>
+    
+    <hr />
+
+    <!-- block 요소 : 태그 자체가 한줄을 기본으로 차지 -->
+    <div>안녕하세요</div>
+
+    <!-- inline 요소 : 태그가 contents의 크기만큼 차지 -->
+    <b>안녕하세요</b>
+    <strong>안녕하세요</strong>
+    <i>안녕하세요</i>
+    <em>안녕하세요</em>
+    <del>안녕하세요</del>
+    <u>안녕하세요</u>
+
+    <hr />
+
+    <img src="../image/cat.jpg" alt="고양이 이미지" title="고양이" width="100"/>
+    <!-- alt : 이미지 로드 실패 또는 로딩중일때 설명 -->
+    <!-- title : 이미지에 마우스 커서를 올리면 나오는 설명 -->
+    <!-- width : 이미지의 가로 크기 -->
+    <!-- height : 이미지의 세로 크기, height 작성 안하면 원래 이미지 비율대로 width에 맞게 들어감 -->
+    <!-- 파일 경로 지정 규칙 -->
+    <!-- 상대 경로 : 현위치를 기준으로 경로 설정 -->
+    <!-- 절대 경로 : 컴퓨터 경로를 처음부터 끝까지 하나하나 작성 -->
+    <!-- C:\Users\Simson\Desktop\github\POSCO-WEB-9\HTML\cat.jpg -->
+    
+    <!-- 상대 경로 규칙 -->
+    <div>
+        ./ : 현재 위치
+        <br />
+        ../ : 상위 폴더
+        <br />
+        ../../ : 상위 폴더의 상위 폴더
+    </div>
+
+    <hr />
+
+    <a href="https://www.naver.com" target="_blank">네이버</a>
+    <br />
+    <a href="https://www.naver.com" target="_self">네이버</a>
+    <!-- href : 이동되는 경로 -->
+    <!-- target : 링크를 클릭했을때 이동되는 방식 -->
+    <!-- _blank는 새창열기 // _self는 현재창에서 이동 -->
+    <br />
+    <a href="./new_html.html">new 페이지</a>
 </body>
 </html>
