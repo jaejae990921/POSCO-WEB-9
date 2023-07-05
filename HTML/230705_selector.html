@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        /* 동시 선택자 */
+        span.orange {
+            /* span 이면서 calss가 orange 인것*/
+            color: orange;
+        }
+        
+        /* 자식 선택자 > */
+        div > p { /* div아래 p태그*/
+            color: navy;
+        }
+
+        /* 바로 아래 자식만 하위X */
+        div > ul > .orange { /* div아래 ul아래 orange클래스 */
+            color: orange;
+        }
+
+        /* 하위 요소 */
+        div .orange { /* div아래 클래스가 orange인 모든 하위 요소 */
+            background-color: red;
+        }
+
+        /* 형제 선택자 */
+        /* ul태그 바로 다음에 div임, ul + p 라면 아무것도 해당X */
+        ul + div {
+            color : red;
+        }
+
+        .apple ~ li {
+            font-weight: 900;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="ex">ㅎㅇㅎㅇ</div>
+    <span>jaeun</span>
+    <ul>
+        <li>사과</li>
+        <li class = "strawberry">딸기</li>
+    </ul>
+
+    <div>
+        <ul>
+            <li class="apple">사과</li>
+            <li>딸기</li>
+            <li class="orange">오렌지</li>
+        </ul>
+        <div>당근</div>
+        <p>토마토</p>
+        <span class="orange">오렌지</span>
+    </div>
+</body>
+</html>

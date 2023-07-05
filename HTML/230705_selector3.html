@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* fruits 클래스에서 첫번째 요소가 span일 경우 O */
+        /* fruits 클래스에서 span중 첫번째 요소 X */
+        .fruits span:first-child {
+            color: red;
+        }
+
+        /* fruits 클래스에서 마지막 요소가 h3일 경우 red로 */
+        .fruits h3:last-child {
+            color : red;
+        }
+
+        /* fruits 클래스에서 2번째 요소를 red로 */
+        /* .fruits *:nth-child(2) {
+            color: red;
+        } */
+
+
+        /* fruits 클래스에서 2번째 요소가 div일 경우 red로 */
+        /* .fruits div:nth-child(2) {
+            background-color: green;
+        } */
+
+        /* fruits 클래스에서 0 2 4 6 ... 식으로 짝수 요소를 변경*/
+        .fruits *:nth-child(2n) {
+            color: red;
+        }
+
+        /* fruits 클래스에서 1 3 5 7 ... 식으로 홀수 요소를 변경*/
+        .fruits *:nth-child(2n+1) {
+            color: blue;
+        }
+
+        /* fruits 클래스에서 2번째 요소 부터 쭉 */
+        .fruits *:nth-child(n+2) {
+            color: green;
+        }
+
+        /* span이 아닌 것 */
+        .fruits *:not(span) {
+            color: skyblue;
+        }
+
+        
+        /* orange 클래스가 아닌 것 */
+        .fruits *:not(.orange) {
+            color: violet;
+        }
+
+        .example::after { /* 내용 다음에 > 가 추가됨*/
+            content : " 👵 ";
+        }
+
+        .example::before { /* 내용 앞에 < 가 추가됨*/
+            content : " 👍 ";
+        }
+
+
+        /* ::before example ::after*/
+
+        /*
+        [속성이름=속성값] {
+
+        }
+        또는
+        [속성이름] {
+
+        }
+        */
+
+        /*
+        [type=text] {
+            background-color: green;    
+        }
+
+        [disabled] {
+            color : white;
+        }
+        */
+
+        :root {
+            --main-color : blue;
+            --main-bg-color : white;
+            --sub-color : rgb(240, 194, 108);
+            --big-font-size : 30px;
+        }
+
+        div {
+            color : var(--main-color);
+            font-weight: 900;
+            font-size: var(--big-font-size);
+        }
+
+        p {
+            background-color: var(--sub-color);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="fruits">
+        <span>딸기</span>
+        <span>수박</span>
+        <span>오렌지</span>
+        <p>망고</p>
+        <h3>사과</h3>
+    </div>
+
+    <div class = "example">
+        바로가기
+    </div>
+
+    <input type="text" value="HEROPY">
+    <input type="password" value="1234">
+    <input type="text" value="ABCD" disabled>
+
+    <div>안녕</div>
+    <p>ㅎㅇㅎㅇ</p>
+</body>
+</html>
