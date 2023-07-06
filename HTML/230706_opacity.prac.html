@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        .content-box { /* 크기가 같이 커지는 듯? */
+            box-sizing: content-box;
+            padding : 20px; /* width : 200px + 40px  // height : 100px + 40px*/
+            border : 10px solid black; /* width : 240px + 20px // height : 140px + 20px */
+        }
+
+        .box:hover {
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box content-box">ABC</div>
+
+</body>
+</html>
