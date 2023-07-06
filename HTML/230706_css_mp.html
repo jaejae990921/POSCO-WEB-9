@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .block {
+            background-color: red;
+            color : white;
+            font-size: 2em;
+            width: 200px;
+            height: 200px;
+
+            /* 4가지 속성을 한번에 지정 
+            margin-top: 100px;
+            margin-left: 100px;
+            margin-bottom: 50px;
+            margin-right: 20px;
+
+            margin : 100px 20px 50px 100px; /* 위 오른쪽 아래 왼쪽 */
+            /* margin : 위 오른쪽 아래 왼쪽 */
+
+            /* 위아래, 양옆이 똑같을 때
+            margin-top: 100px;
+            margin-left: 20px;
+            margin-bottom: 100px;
+            margin-right: 20px;
+            /* margin : 100px 20px; /* 위 아래 왼쪽 오른쪽 */
+            
+            /* 다 똑같을 때
+            margin : 100px */
+
+            padding-top: 50px;
+            padding-left: 50px;
+            /* margin 처럼 단축 가능*/
+        }
+
+        .inline { /* inline 요소는 margin은 적용X paadingi은 적용O*/
+            background-color: blue;
+            color : white;
+        }
+
+        /* vw = view width // vh = view height */
+        .mm-width {
+            background-color: red;
+            color : white;
+            font-size: 30px;
+            line-height: 100px;
+            /* width: 80vw; /* 화면의 80% */
+            height: 100px;
+            /* max-width: 1000px; /* width 최댓값 */
+            /* min-width: 500px; /* width 최솟값 */
+            width : calc(100vw - 200px); /* calc가 계산해줌 */
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- border를 기준으로 margin : 외부 여백 // padding 내부 여백 -->
+    <div class="block">안녕</div>
+    <span class="inline">hello</span>
+    <div class="mm-width">DDD</div>
+</body>
+</html>
