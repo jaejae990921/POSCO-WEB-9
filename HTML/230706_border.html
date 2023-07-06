@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .border-1 { /* color, width, style 다 적어줘야 함 */
+            border-color: black red blue yellow;
+            border-style: solid dashed;
+            border-width: 10px 5px;
+        }
+
+        .border-2 {
+            /* border : 5px dashed red; */
+            /* border-top : 5px solid black; /* width, color, style */
+            border-left : 5px dashed red;
+            
+            border-top-color : black;
+            border-top-width : 10px;
+            border-top-style : solid;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        .content-box { /* 크기가 같이 커지는 듯? */
+            box-sizing: content-box;
+            padding : 20px; /* width : 200px + 40px  // height : 100px + 40px*/
+            border : 10px solid black; /* width : 240px + 20px // height : 140px + 20px */
+            /*visibility: hidden; 모습만 사라지고 자리는 차지함 */
+            /* display: none; 자리차지 X */
+        }
+
+        .border-box { /* 전체 크기는 그대로 */
+            box-sizing: border-box;
+            padding : 20px;
+            border : 10px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    <div class="box border-1"></div>
+    <br/>
+    <br/>
+    <div class="box border-2"></div>
+    -->
+
+    <div class="box content-box">ABC</div>
+    <br/> <br/>
+    <div class="box border-box">ABC</div>
+
+</body>
+</html>
