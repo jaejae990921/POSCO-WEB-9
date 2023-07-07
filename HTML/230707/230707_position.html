@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .r-1 { /* left top bottom right*/
+            left: 50px;
+            top : 50px;
+            background-color: red;
+        }
+
+        .r-2 { /* left top bottom right*/
+            background-color : blue;
+            bottom : -50px;
+        }
+
+        .r-3 {
+            background-color : yellow;
+            right : -10px;
+        }
+
+        .parents { /* 부모 요소를 기준 */
+            position: relative;
+            width : auto;
+            height : 200px;
+        }
+
+        /* 부모의 relative를 찾음 */
+        .absolute { /* left 또는 right // top 또는 bottom 형식으로 하나만 사용*/
+            position: absolute;
+            background-color: orange;
+            /* left : 10px;
+            top : 30px; */
+            right: 10%; /* 부모가 div태그라 맨 오른쪽으로 붙어버림 */
+            bottom : 0px; /* 아래로 붙어버림 !!! */
+        }
+
+        .absolute.a-1 {
+            right: 5%;
+            bottom: 20px;
+            background-color: green;
+        }
+
+        .fixed {
+            position: fixed;
+            top : 0;
+            left : 0;
+            width : 100%;
+            height : 50px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- 추후에 header에 fixed 주고 nav바 만들게 되면 main에 margin 을 줘서 본문 내용이 다 보이게 설정해야 함 -->
+    <div class="relative r-1"></div>
+    <div class="relative r-2"></div>
+    <div class="relative r-3"></div>
+    <div class="parents">
+        <div class="absolute"></div>
+        <div class="absolute a-1"></div>
+    </div>
+
+    <div class="fixed"></div>
+</body>
+</html>
