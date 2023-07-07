@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            transition-property: transform;
+            transition-duration: 3s;
+            transition-timing-function: linear;
+            transition-delay: 2s; /* 바뀌는거 + 원상복구 될때 딜레이*/
+
+            /* transform: property, duration, timing-function, delay; */
+        }
+
+        img#translate:active {
+            transform: translate(100px, 40px);
+        }
+
+        img#scaleX:active {
+            transform: scaleX(2);
+        }
+
+        img#rotate:active {
+            /* x,y는 돌아간다고 생각하면 됨 */
+            transform: rotateX(180deg);
+            backface-visibility: hidden; /* 뒷면 숨김 여부 */
+        }
+
+        img#skew:active {
+            transform: skewY(-45deg);
+        }
+
+        .box {
+            margin-left: 0;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            transition: all 2s;
+        }
+
+        .box:hover {
+            width: 200px;
+            height: 200px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="box"></div>
+        <img id="translate"
+            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDVfMjI4%2FMDAxNjU2OTkzMDM3NzM5.nX8G42IYgt90OwlAOIQ6G-GNalrSOmLvaJCG4_oXyjMg.g1obojagiLCknlPmEaksUSTX7hp5McYDrAUsQXL6PCkg.JPEG.prince0198%2FDSC02985.jpg&type=sc960_832" />
+
+        <img id="scaleX"
+            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDVfMjI4%2FMDAxNjU2OTkzMDM3NzM5.nX8G42IYgt90OwlAOIQ6G-GNalrSOmLvaJCG4_oXyjMg.g1obojagiLCknlPmEaksUSTX7hp5McYDrAUsQXL6PCkg.JPEG.prince0198%2FDSC02985.jpg&type=sc960_832" />
+
+        <img id="rotate"
+            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDVfMjI4%2FMDAxNjU2OTkzMDM3NzM5.nX8G42IYgt90OwlAOIQ6G-GNalrSOmLvaJCG4_oXyjMg.g1obojagiLCknlPmEaksUSTX7hp5McYDrAUsQXL6PCkg.JPEG.prince0198%2FDSC02985.jpg&type=sc960_832" />
+
+        <img id="skew"
+            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA3MDVfMjI4%2FMDAxNjU2OTkzMDM3NzM5.nX8G42IYgt90OwlAOIQ6G-GNalrSOmLvaJCG4_oXyjMg.g1obojagiLCknlPmEaksUSTX7hp5McYDrAUsQXL6PCkg.JPEG.prince0198%2FDSC02985.jpg&type=sc960_832" />
+    </div>
+</body>
+</html>
