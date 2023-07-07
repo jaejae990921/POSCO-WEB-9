@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 600px;
+            /* flex는 자식 요소를 inline-block으로 만들어 버림*/
+            display: flex;
+            /* flex-direction: column-reverse; /* 기본값 row라서 가로로 정렬됨*/
+            /* reverse는 시작점이 반대가 돼서 빨주노 -> 노주빨 */
+            flex-wrap: wrap; /* 기본값 nowrap->한줄에 우겨넣어서 사이즈 바뀜, wrap은 한 줄에 다 못 담으면 다음 줄로 넘어감*/
+            /* justify-content: space-evenly;
+            /* space-between, space-around, space-evenly 차이는 pdf 참고*/
+            /*align-items: flex-end; */
+            align-content: flex-start;
+        }
+        .container > div , .container-1 > div {
+            width: 100px;
+            height: 100px;
+        }
+        .red {
+            background-color: red;
+        }
+        .orange {
+            background-color: orange;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+    </div>
+
+    <div class="container-1">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+    </div>
+</body>
+</html>
