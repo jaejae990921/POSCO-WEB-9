@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+        }
+
+        img {
+            width: 200px;
+        }
+
+        img#card1 {
+            position: absolute;
+            top: 120px;
+            left: 30px;
+            transform: skewY(45deg);
+            z-index: 3;
+        }
+
+        img#card2 {
+            position: absolute;
+            top: 120px;
+            left: 200px;
+            transform: skewY(45deg);
+            z-index: 2;
+        }
+
+        img#card3 {
+            position: absolute;
+            top: 120px;
+            left: 370px;
+            transform: skewY(45deg);
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img id="card1" src="./card1.JPG" />
+        <img id="card2" src="./card2.JPG" />
+        <img id="card3" src="./card3.JPG" />
+    </div>
+</body>
+
+</html>
