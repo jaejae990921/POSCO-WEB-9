@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+        
+        @font-face {
+            font-family: 'TTWanjudaedunsancheB';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        :root { /* html 모든 요소 */
+            font-size: 20px;
+            font-family: 'Noto Sans KR', sans-serif; /* 앞 폰트 없으면 뒤 폰트로 */
+        }
+
+        main {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .font-px { /* pixel 크기 -> 화면 해상도에 따라 다르게 보임 */
+            font-size: 20px;
+        }
+
+        .font-em { /* 가장 가까운 부모 요소의 font-size에 따라 크기가 달라짐 */
+            font-size: 1.5em; /* 1.5 * 20px = 30px */
+            font-weight: 900;
+        }
+
+        .font-rem { /* 가장 상위 요소(html)의 font-size에 따라 크기가 달라짐 */
+            font-size: 1.5rem; /* 1.5 * 20px = 30px */
+            line-height: 2; /* 2 * 30px = 60px */
+            font-family: 'TTWanjudaedunsancheB', sans-serif;
+            text-align: left;
+        }
+
+        .font-per { /* 부모 요소 */
+            font-size: 100%;
+            color : hsla(268, 100%, 50%, 0.741);
+            text-decoration: underline;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* display 기본값
+        span {
+            display : inline;
+        }
+
+        div {
+            display : block;
+        }
+        */
+
+        .inline-block { /* div에 적용시키면 콘텐츠 크기 만큼 차지 */
+            display : inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="font-px">안녕하세요</div>
+        <div class="font-em">안녕하세요</div>
+        <div class="font-rem">안녕하세요</div>
+        <div class="font-per">안녕하세요</div>
+    </main>
+    <a href="https://www.naver.com">네이버</a>
+
+    <div style="background-color: red;">aaa</div> <br/>
+    <span style="background-color: blue;">bbb</span>
+    <!-- 인라인 요소는 width, height가 먹히지 않음, content 의 크기에 따라 자동으로 설정됨-->
+    <!-- 블록 요소안에 인라인 요소 O -->
+    <!-- 인라인 요소안에 블록 요소 X -->
+
+    <div style="display: inline-block; background-color : yellow; width : 200px">CCC</div>
+</body>
+
+</html>
