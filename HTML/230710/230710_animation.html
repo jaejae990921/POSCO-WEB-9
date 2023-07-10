@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            animation: movetoright 2s infinite alternate; /* 이 3개가 필수값 -> 이름, 지속시간, 반복횟수 */
+        }
+
+        @keyframes movetoright { /* 원하는 이름 작성하면 됨 // 정의만 한거고 animation으로 속성 지정해줘야 함*/
+            
+            from { /* 처음 */
+                left: 0px;
+            }
+            to { /* 끝 */
+                left: 100px;
+            }
+
+            /*
+            0% {
+                left: 0px;
+            }
+
+            50% {
+                left: 100px;
+            }
+
+            100% {
+                left: 0px;
+            }
+            */
+
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
