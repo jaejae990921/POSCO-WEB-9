@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    <script>
+        // 함수 선언문 -> 호이스팅 때문에 어디서든 호출 가능
+        function sayHello() {
+            console.log("hello");
+        }
+
+        // 함수를 선언한다고 실행되지 않는다.
+        // 호출을 해야 실행됨
+
+        // 함수 호출
+        sayHello();
+
+        // 함수 표현식 -> 변수 선언 하기전에 호출하면 에러 발생
+        let sayHello2 = function() { // 익명함수
+            console.log("hello2");
+        }
+
+        // 함수 호출
+        sayHello2();
+
+        // 화살표 함수(함수 표현식) -> 변수 선언 하기전에 호출하면 에러 발생
+        let sayHello3 = () => {
+            console.log("hello3");
+        }
+
+        // 함수 호출
+        sayHello3();
+    </script>
+
+    <script>
+        let number = 5;
+        // 매개변수란 함수 외부에서 사용한 변수, 값 등을 함수 내부로 전달하는 매개체
+        // 반환값이란 함수 내부에서 처리한 결과(변수,값)를 함수 외부로 전달하는 매개체
+
+        // 1. 매개변수X 반환값X
+        function aaa() {
+            console.log("aaa");
+        }
+        aaa();
+
+        // 2. 매개변수x 반환값O
+        function bbb() {
+            return "bbb";
+        }
+        console.log(bbb());
+        let bf = bbb();
+
+        // 3. 매개변수O 반환값X
+        let number1 = 5;
+        let number2 = 3;
+        function ccc(num1, num2) {
+            console.log(num1 + num2);
+        }
+
+        ccc(number1, number2);
+
+        // 4. 매개변수O 반환값O
+        function ddd(num1) {
+            return num1 + 5;
+        }
+        let df = ddd(5);
+        console.log(df);
+
+
+        let sum = (num1, num2) => {
+            let num = num1 + num2;
+            let mul = num * 5;
+            return mul;
+        }
+
+        let sumMul = sum(3, 6);
+        console.log(sumMul);
+    </script>
+    -->
+
+    <script>
+        function sayHello() {
+            alert("안녕하세요?");
+        }
+    </script>
+
+    <button onclick="sayHello()">안녕?</button>
+    <div style="border: 1px solid #000; cursor: pointer;" onclick="sayHello()">안녕?</div>
+</body>
+</html>
