@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 600px;
+            margin-top: 20px;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        td.number {
+            width: 50px;
+        }
+
+        td.who {
+            width: 100px;
+        }
+
+        td.contents {
+            width: 250px;
+        }
+
+        td.date {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    방명록입니다.
+    <br />
+    <div>
+        <div>작성자 <input type="text" id="name" /></div>
+        <div>내용 <input type="text" id="content" /></div>
+    </div>
+
+    <div>
+        <button type="button" onclick="bangadd()">작성</button>
+    </div>
+
+    <table>
+        <tr>
+            <td class="number">번호</td>
+            <td class="who">작성자</td>
+            <td class="contents">내용</td>
+            <td class="date">작성일</td>
+        </tr>
+    </table>
+
+    <script>
+        let num = 1;
+        function bangadd() {
+            let table = document.querySelector("table");
+
+            //tr 태그 생성
+            let tr = document.createElement("tr");
+
+            //번호 태그 생성
+            let numtd = document.createElement("td");
+            numtd.innerText = num;
+
+            //작성자 태그 생성
+            let nametd = document.createElement("td");
+            nametd.innerText = document.getElementById("name").value;
+
+            //내용 태그 생성
+            let contenttd = document.createElement("td");
+            contenttd.innerText = document.getElementById("content").value;
+
+            //작성일 태그 생성
+            let now = new Date();
+            let nowtd = document.createElement("td");
+            nowtd.innerText = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " " + now.getHours() + ":" + now.getMinutes();
+
+            //tr 태그에 td 태그들을 자식으로 추가
+            tr.append(numtd);
+            tr.append(nametd);
+            tr.append(contenttd);
+            tr.append(nowtd);
+
+            table.appendChild(tr);
+            num++;
+
+            document.getElementById("name").value = "";
+            document.getElementById("content").value = "";
+
+            /* innerHTML로 td 생성 후 안에 값 넣어주는 방식으로도 가능
+            tr.innerHTML = `
+                <td>${num}</td>
+                <td>${document.getElementById("name").value}</td>
+                <td>${document.getElementById("content").value}</td>
+                <td>${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()} ${now.getHours()}:${now.getMinutes()}</td>
+            `
+            */
+        }
+    </script>
+</body>
+
+</html>
