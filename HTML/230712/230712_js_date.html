@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let now = new Date() // 2023-07-12일(수) 기준
+        let expired = new Date("2023-03-07");
+
+        console.log(now)
+        console.log(expired)
+
+        console.log(now.getFullYear()) // 년도 -> 2023
+        console.log(now.getMonth()+1)  // 월 -> getMonth는 실제 월-1이 되기때문에 +1 해줘서 사용
+    
+        console.log(now.getDate()) // 일 -> 12
+        console.log(now.getDay()) // 요일 -> 3 (일:0, 월:1, 화:2, 수:3, 목:4, 금:5, 토:6)
+        console.log(now.getTime() >= expired.getTime()) // now를 기준으로 expired가 지났는지 확인
+        // getTime 1970년 1월 1일 0시 0분 0초부터 현재까지의 시간을 밀리초로 반환
+
+        let year = now.getFullYear();
+        let month = now.getMonth()+1;
+        let date = now.getDate();
+        
+        console.log(`${year}년 ${month >= 10 ? month : "0" + month}월 ${date >= 10 ? date : "0" + date}일`)
+    </script>
+</body>
+</html>
