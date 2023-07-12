@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="red" class="box red"></div>
+        <div id="orange" class="box orange"></div>
+        <div class="box yellow"></div>
+    </div>
+
+    <button type="button" onclick="creatGreenBox()">생겨라!!</button>
+    <button type="button" onclick="removeBox()">사라져라!!</button>
+
+    <script>
+        let container = document.querySelector(".container");
+        // console.log(container);
+        console.log(container.children); // 자식들을 배열로 출력
+
+        let redBox = document.getElementById("red");
+        console.log(redBox.parentNode); // 부모를 출력 -> 하나만 출력이라 배열 X
+        console.log(redBox.nextElementSibling) // 다음 형제를 출력
+        console.log(redBox.nextElementSibling.nextElementSibling) // 다음 형제의 다음 형제
+
+        // let orangeBox = document.getElementById("orange");
+        console.log(orangeBox.previousElementSibling) // 이전 형제를 출력
+
+        function creatGreenBox() { // 초록색 박스 추가
+            let creatBox = document.createElement("div"); // 태그를 만듬
+            creatBox.className = "box green"; // class이름을 지정
+            
+            // 요소.append()
+            // container.append(creatBox); // container(부모)에 ( ) 안에 있는 것을 자식으로 주가
+            // container.appendChild(creatBox); // appendChild 안에는 무조건 Node 객체만 올 수 있음
+            // container.append("안녕?"); // append는 문자열과 Node객체 모두 가능
+            // appendChild는 Node객체만 가능
+
+            // container.prepend(creatBox); // container(부모)에 ( ) 안에 있는 것을 자식으로 맨 앞에 추가
+
+            // orangeBox.before(creatBox) // 이전 형제로 추가
+            orangeBox.after(creatBox) // 다음 형제로 추가
+        }
+
+        function removeBox() {
+            let orangeBox = document.getElementById("orange");
+            orangeBox.remove(); // orangeBox를 삭제
+            // container.removeChild(orangeBox); // orangeBox를 삭제 -> 앞에 부모 요소를 줘야 함
+        }
+
+        // redBox.setAttribute("class", "box orange"); // setAttribute("속성이름", "변경할 값") => 변수명.className = "변경할 값"과 같음
+    </script>
+
+
+    <!-- <button type="button" onclick="redToggle()">깜빡 깜빡</button> -->
+
+    <!--
+    <script>
+        //let redBox = document.getElementById("red");
+        //redBox.innerText = "aaa"; // 안에 내용을 aaa로 바꿈 태그도 다 사라짐
+        //console.log(redBox.innerText); // text만 출력
+        //console.log(redBox.innerHTML); // html태그까지 출력
+        //console.log(redBox.textContent); // text만 출력
+
+        //console.log(redBox.className) // class이름 출력
+        //redBox.className = "box yellow"; // class이름 변경
+
+       //console.log(redBox.classList.add()); // class이름들을 배열로 출력
+
+        function redToggle() {
+            let redBox = document.getElementById("red");
+            redBox.classList.toggle("red"); // class이름이 red인 것을 토글함
+            // classList 속성은 toggle 함수 제공
+            // 괄호 안에 들어온 값을 리스트 안에 존재하는지 알아서 판단
+            // 괄호 안에 들어온 값을 자동으로 추가하거나 삭제함.
+
+            /*
+            if (redBox.classList.contains("red")) {
+                redBox.classList.remove("red");
+            } else {
+                redBox.classList.add("red");
+            }
+            */
+
+            // classList 속성은 contains 함수 제공
+            // 괄호 안에 들어온 값이 클래스에 존재하는 지 검사 
+            // true false return
+
+            // classList 속성은 remove 함수 제공
+            // 괄호 안에 들어온 값을 리스트 안에서 삭제
+
+            // classList 속성은 add 함수 제공
+            // 괄호 안에 들어온 값을 리스트 안에 추가
+        }
+    </script>
+    -->
+
+    <!-- <input type="text" name="id" /> -->
+
+    <!-- <script>
+        let redBoxById = document.getElementById("red"); // id로 선택, 하나만 선택함 -> id는 유일해야함
+        console.log(redBoxById);
+
+        let boxes = document.getElementsByClassName("box"); // class이름으로 선택, 하나만 담겨도 배열로 담음
+        console.log(boxes);
+
+        let boxesByTag = document.getElementsByTagName("div"); // 태그이름으로 선택, 하나만 담겨도 배열로 담음
+        console.log(boxesByTag);
+
+        let input = document.getElementsByName("id"); // name으로 선택, 하나만 담겨도 배열로 담음
+        console.log(input);
+
+        // querySelector, querySelectorAll는 선택자를 사용해서 선택하는데, div태그나 class이름, id이름 다 사용가능
+        let boxesBySelector = document.querySelector(".box"); // class이름으로 선택, 하나만 선택
+        console.log(boxesBySelector);
+
+        let boxesBySelectorAll = document.querySelectorAll(".box"); // class이름으로 선택, 모두 선택 후 배열로
+        console.log(boxesBySelectorAll)
+
+        let orangeBySelectorAll = document.querySelectorAll(".orange"); // class이름으로 선택, 모두 선택 후 배열로
+        console.log(orangeBySelectorAll);
+    </script> -->
+</body>
+
+</html>
