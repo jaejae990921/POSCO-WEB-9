@@ -12,6 +12,7 @@
             console.log(fruits[i]);
         }
 
+        /*
         let number = 5;
         let cnt = 0;
         for (let i = 1; i <= number; i++){
@@ -27,7 +28,22 @@
             for(let j = 0; j < 5; j++) {
                 console.log(i, j);
             }
-        }
+        } */
+
+        // forEach는 함수의 매개변수로 함수를 받음
+        // ver1
+        fruits.forEach(function(data, index, array) {
+            console.log("data: ", data);
+            console.log("index: ", index);
+            console.log("array: ", array);
+        })
+
+        // ver2
+        fruits.forEach((data, index, array) => {
+            console.log("data: ", data);
+            console.log("index: ", index);
+            console.log("array: ", array);
+        })
     </script>
 </body>
 </html>
