@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>값1: <input type="text" id="value1" /></div>
+    <div>값2: <input type="text" id="value2" /></div>
+    <div>연산자: <input type="text" id="operator" /></div>
+    <div>결과: <input type="text" id="result" /></div>
+
+    <div>
+        <button type="button" onclick="calc()">계산하기</button>
+        <button type="button" onclick="reset()">초기화</button>
+    </div>
+
+    <script>
+        function calc() {
+            let value1 = Number(document.getElementById("value1").value);
+            let value2 = Number(document.getElementById("value2").value);
+            let operator = document.getElementById("operator").value;
+            let result = 0;
+            console.log(typeof value1);
+            switch (operator) {
+                case '+':
+                    result = value1 + value2;
+                    break;
+                case '-':
+                    result = value1 - value2;
+                    break;
+                case '*':
+                    result = value1 * value2;
+                    break;
+                case '/':
+                    result = value1 / value2;
+                    break;
+                default:
+                    alert("연산자를 잘못 입력하셨습니다.");
+            }
+            document.getElementById("result").value = result;
+        }
+
+        function reset() {
+            document.getElementById("value1").value = "";
+            document.getElementById("value2").value = "";
+            document.getElementById("operator").value = "";
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>
