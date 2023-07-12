@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "Happy day~! ";
+        console.log(str.length);
+
+        console.log(str.toUpperCase()); // 대문자로 변환
+        console.log(str.toLowerCase()); // 소문자로 변환
+
+        console.log(str.indexOf("e")); // 없으면 -1
+
+        console.log(str.slice(2, 7)); // 인덱스 2 3 4 5 6 출력
+
+        console.log(str.replace('p', 'a')); // 처음 찾은 p를 a로 대체
+        console.log(str.replaceAll('p', 'a')); // 모든 p를 a로 대체
+
+        console.log(str.repeat(2)); // 반복 출력
+
+        console.log(str.trim()); // 앞뒤 공백 제거
+
+        // 이름/성별/전화번호
+        // 2023-07-12
+        console.log(str.split(" ")); // 공백을 기준으로 배열로 변환
+        console.log(str.split("/")); // /를 기준으로 배열로 변환
+        console.log(str.split("")); // 한 글자씩 배열로 변환 (공백 포함)
+
+        let hello = "Hello~";
+        hello.split(""); // ["H", "e", "l", "l", "o", "~"]
+
+        let hello2 = "Hello~";
+        hello2.split("").reverse(); // ["~", "o", "l", "l", "e", "H"]
+        hello2.join(""); // "~olleH"
+
+        let hello3 = "Hello~";
+        hello3.split("").reverse().join(""); // "~olleH"
+    </script>
+</body>
+</html>
