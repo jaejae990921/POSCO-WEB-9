@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            cursor: pointer;
+            /* 마우스 커서 올리면 손가락 모양으로 변경 */
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box red" onclick="switchColor()"></div>
+    <script>
+        let colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+        function switchColor() {
+            let nowColor = $(".box").attr("class").split(" ")[1] // 현재 색상
+            let nowColorIndex = colors.indexOf(nowColor) // 현재 색상 인덱스
+            let nextColorIndex = (nowColorIndex + 1) % colors.length // 다음 색상 인덱스
+            let nextColor = colors[nextColorIndex] // 다음 색상
+
+            $(".box").switchClass(nowColor, nextColor, 500) // 현재 색상에서 다음 색상으로 0.5초 동안 변경
+        }
+    </script>
+</body>
+</html>
