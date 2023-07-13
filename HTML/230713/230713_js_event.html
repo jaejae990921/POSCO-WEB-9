@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    window.addEventListener("load", () => {
+        let div = document.querySelector("div");
+        div.style.marginLeft = "100px";
+    })
+</script>
+
+<body>
+    <!-- <div onclick=""></div> -->
+    <button type="button">버튼</button>
+    <input type="text" name="id" placeholder="id를 입력해주세요." />
+    <input type="password" name="pw" id="pw" placeholder="비밀번호를 입력해주세요." />
+    <input type="password" name="pw_check" id="pw_check" placeholder="비밀번호를 입력해주세요." />
+    <div style="width: 100px; height: 100px; background-color: red; transition: 1s;"></div>
+
+    <script>
+        let button = document.querySelector("button");
+
+        button.addEventListener("click", function () {
+            // 앞에 이벤트명은 click, mouseover, mouseout 등등 정해진 값이 있음
+            // mouseup은 마우스를 눌렀다가 뗄 때, mousedown은 마우스를 누를 때
+            alert("클릭!");
+        });
+
+        let input = document.getElementById("pw");
+        input.addEventListener("keyup", (e) => {
+            // console.log(e.key); // key는 입력한 값
+            // if (e.key == "Enter") {
+            //     alert("로그인");
+            // }
+        })
+
+        document.getElementById("pw_check").addEventListener("change", (e) => { // focus -> blur가 될 때 값의 변화가 있는지 확인
+            if (input.value == e.currentTarget.value) {
+                alert("비밀번호가 일치합니다.");
+            } else {
+                alert("비밀번호가 일치하지 않습니다.");
+            }
+            // input.value == e.currentTarget.value ? alert("비밀번호가 일치합니다.") : alert("비밀번호가 일치하지 않습니다.");
+        })
+
+        input.addEventListener("change", (e) => { // focus -> blur 되면 value의 값을 확인
+            console.log(e.currentTarget.value); // 변화가 일어난 객체의 value를 출력
+        })
+
+        window.addEventListener("resize", () => { // 변화가 일어날 때
+            if(window.innerWidth >= 400) { // 너비가 400px 보다 클 때
+                console.log("크다");
+            }
+            console.log(window.innerWidth); // 브라우저의 가로 크기 추루력
+        })
+
+        // for(let i = 0; i < input.length; i++) {
+        //     input[i].addEventListener("focus", (e) => {
+        //         e.currentTarget.style.backgroundColor = "black";
+        //     })
+
+        //     input[i].addEventListener("blur", (e) => {
+        //         e.currentTarget.style.backgroundColor = "initial"; // 초기화
+        //     })
+        // }
+
+        // input.addEventListener("focus", (e) => {
+        //     // input을 클릭했을 때, 뒤에 e는 이벤트 객체
+        //     // input.style.backgroundColor = "black";
+        //     // console.log(e.currentTarget); // currentTarget는 이벤트가 발생한 객체를 의미
+        //     e.currentTarget.style.backgroundColor = "black";
+        // })
+
+        // input.addEventListener("blur", (e) => {
+        //     // input을 클릭했다가 다른 곳을 클릭했을 때
+        //     e.currentTarget.style.backgroundColor = "yellow";
+        // })
+
+        // css로 가능한건 최대한 css로 하는게 좋음 js은 상대적으로 무겁다
+    </script>
+</body>
+</html>
