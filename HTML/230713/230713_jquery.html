@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            transition: all 3s;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="id" id="id" />
+    <button type="button" onclick="submitt()">바껴라</button>
+    <button type="button" onclick="btn2()">사라져라</button>
+
+    <div></div>
+    <div></div>
+
+    <div class="container">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="red"></div>
+    </div>
+
+    <button onclick="fn3()">요소 탐색</button>
+
+    <script>
+        function fn3() {
+            // console.log($(".container").children().removeClass("red")); // 자식태그 선택
+            // console.log($(".orange").parent()) // 부모 요소
+            // console.log($(".orange").parents()) // 상위 요소 전부
+            // console.log($(".orange").parents(".container")) // 상위 중 container 인것
+            // console.log($(".orange").next()) // 다음 형제 요소
+            // console.log($(".orange").prev()) // 이전 형제 요소
+
+            // console.log($(".red").nextAll()) // 다음 형제 요소 전부
+            // console.log($(".red").prevAll()) // 이전 형제 요소 전부
+            // ()에 클래스나 id 입력하면 해당 요소만 가져옴
+        }
+
+        // JQuery 방식
+        // $("input").val("aaaa") // input의 value를 변경
+
+        // Js 방식
+        // let input = document.querySelectorAll("input");
+        // for (let i = 0; i < input.length; i++) {
+        //     input[i].value = "aaaa";
+        // }
+
+        function submitt() {
+            // $("#id").val("aaa"); // JQuery로 value 변경
+
+            // css 변경
+            // $("div").css("background-color", "blue");
+            // $("div").css("border-radius", "50%");
+
+            // attr 함수
+            $("input").attr("placeholder", "아이디를 입력하세요.");
+
+            // text 함수 .innerText
+            // $("div").text("안녕?");
+
+            // html 함수 .innerHTML
+            // $("div").html("<p>Hi</p>");
+
+            // append() 함수
+            $("div").append(`<h1>1</h1>`);
+            // let h1 = document.createElement("h1");
+            // h1.innerText = "안녕?";
+            // document.querySelector("div").append(h1);
+
+            // prepend() 함수
+            $("div").prepend(`<h1>2</h1>`);
+
+            // affer() 함수
+            $("div").after(`<h1>3</h1>`);
+
+            // before() 함수
+            $("div").before(`<h1>4</h1>`);
+
+            // empty() 함수
+            $("div").empty();
+
+            // remove() 함수
+            // $("div").remove();
+
+            // addClass() 함수
+            $("div").addClass("red");
+
+            ////////////////////////////////
+
+            // let valueJQeury = $("#id").val(); // value를 가져오는 함수
+            // let valueJs = document.getElementById("id").value; // value를 가져오는 함수
+
+            // console.log(valueJQeury);
+            // console.log(valueJs);
+
+            // document.getElementById("id").value = "aaa"; // Js로 value 변경
+            // $("#id").val("bbb"); // JQuery로 value 변경
+        }
+
+        function btn2() {
+            // removeClass() 함수
+            // $("div").removeClass(); // 아무것도 안쓰면 모든 클래스를 삭제함
+            // $("div").removeClass("red"); // red 클래스만 삭제함
+
+            // hasClass() 함수
+            console.log($("div").hasClass("red")); // red 클래스의 유무를 판단 -> true, false
+
+            // toggleClass() 함수
+            $("div").toggleClass("red"); // red 클래스가 없으면 추가, 있으면 삭제
+        }
+    </script>
+    <!--
+    <script>
+        // $(선택자).동작함수(); // 기본 형태
+        // 선택자에는 div .red #id 등 원래 알던 선택자로 작성하면 됨
+    </script>
+    -->
+</body>
+</html>
