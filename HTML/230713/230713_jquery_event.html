@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container"></div>
+
+    <button type="button">버튼</button>
+
+    <input type="text" name="id" id="id"></input>
+
+    <script>
+        // $(선택).이벤트함수(function () {
+        //     // 이벤트 발생 시 실행할 코드
+        // })
+
+        window.addEventListener("load", function () { })
+
+        // $(window).ready(function () {
+        //     $(".container").append(`<h1>안녕</h1>`)
+        // })
+
+        // $(function () { // 페이지 로드 완료 후에 실행되는 함수
+        //     $(".container").append(`<h1>완료</h1>`)
+        // })
+
+        // $().on("click", function () {
+        // })
+
+        // $("button").click(function () {
+        //     alert("클릭");
+        // })
+
+        // $("button").on("click", function () {
+        //     alert("클릭");
+        // })
+
+        // $("button").hover(function () { // 마우스가 올라가있는 동안
+        //     alert("hover");
+        // })
+
+        $("button").mouseover(function () { // 마우스가 올라가는 순간
+            alert("hover");
+        })
+
+        // $(window).scroll(function () { // 스크롤이 움직일 때
+        //     console.log("스크롤");
+        // })
+
+        $("input").keydown(function (e) { // keydown은 키를 누르는 순간
+            // e는 이벤트 객체
+            // e.currentTarget은 이벤트가 발생한 요소
+            console.log(e);w
+            console.log(e.currentTarget);
+            console.log(this)
+            console.log(e.key == "Enter");
+        })
+
+        // keyup은 키를 누르고 뗄 때
+    </script>
+</body>
+
+</html>
