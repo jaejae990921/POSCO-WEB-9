@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--     <style>
+        body {
+            background-color: indianred;
+            color: white;
+        }
+        .box {
+            font-size: 100px;
+        }
+        /* @media 미디어유형 and (크기규칙) */
+        /* 미디어 유형 : All(전부) Print(인쇄) Screen(전부) */
+        /* 크기 조건 : max, min-width / max min-height  */
+        /* max-width : 오른쪽에 나온 숫자 값 "이하"일 때 */
+        /* min-width : 오른쪽에 나온 숫자 값 "이상"일 때 */
+
+        /* 우선순위 때문에 큰거에서 작은 순으로 작성 */
+        @media screen and (max-width: 700px) {
+            body {
+                background-color: green;
+                /* font-family: serif; */
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            body {
+                background-color: yellow;
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            body {
+                background-color: black;
+            }
+        }
+
+        /* @media print { /* 인쇄할 때
+            .box {
+                display: none;
+            }
+        } */
+    </style> -->
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        /* min은 작은거에서 큰 순으로 작성 */
+        /* @media screen and (min-width: 300px) {
+            body {
+                background-color: yellow;
+            }
+        }
+
+        @media screen and (min-width: 500px) {
+            body {
+                background-color: green;
+            }
+        } */
+
+        @media screen and (orientation: landscape) {/* 가로모드 */
+            body {
+                background-color: blue;
+            }
+        }
+
+        @media screen and (orientation: portrait) {/* 세로모드 */
+            body {
+                background-color: yellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">Hi</div>
+</body>
+
+</html>
