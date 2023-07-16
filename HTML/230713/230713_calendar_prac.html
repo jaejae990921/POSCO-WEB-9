@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<style>
+    table {
+        width: 90%;
+        text-align: center;
+    }
+
+    tr>td:first-child>p,
+    tr>th:first-child {
+        color: red;
+    }
+
+    tr>td:last-child>p,
+    tr>th:last-child {
+        color: blue;
+    }
+
+    td>p:hover {
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .ym {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        color: green;
+        padding-right: 10%;
+    }
+
+    td {
+        width: 200px;
+        height: 80px;
+        vertical-align: top;
+    }
+</style>
+
+<body>
+    <div class="ym">2023년 7월</div>
+    <table>
+        <tr class="row">
+            <td class="sun">日</td>
+            <td>月</td>
+            <td>火</td>
+            <td>水</td>
+            <td>木</td>
+            <td>金</td>
+            <td class="sat">土</td>
+        </tr>
+        <tr class="row">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="sat">
+                <p>1</p>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="sun">
+                <p>2</p>
+            </td>
+            <td>
+                <p>3</p>
+            </td>
+            <td>
+                <p>4</p>
+            </td>
+            <td>
+                <p>5</p>
+            </td>
+            <td>
+                <p>6</p>
+            </td>
+            <td>
+                <p>7</p>
+            </td>
+            <td class="sat">
+                <p>8</p>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="sun">
+                <p>9</p>
+            </td>
+            <td>
+                <p>10</p>
+            </td>
+            <td>
+                <p>11</p>
+            </td>
+            <td>
+                <p>12</p>
+            </td>
+            <td>
+                <p>13</p>
+            </td>
+            <td>
+                <p>14</p>
+            </td>
+            <td class="sat">
+                <p>15</p>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="sun">
+                <p>16</p>
+            </td>
+            <td>
+                <p>17</p>
+            </td>
+            <td>
+                <p>18</p>
+            </td>
+            <td>
+                <p>19</p>
+            </td>
+            <td>
+                <p>20</p>
+            </td>
+            <td>
+                <p>21</p>
+            </td>
+            <td class="sat">
+                <p>22</p>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="sun">
+                <p>23</p>
+            </td>
+            <td>
+                <p>24</p>
+            </td>
+            <td>
+                <p>25</p>
+            </td>
+            <td>
+                <p>26</p>
+            </td>
+            <td>
+                <p>27</p>
+            </td>
+            <td>
+                <p>28</p>
+            </td>
+            <td class="sat">
+                <p>29</p>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="sun">
+                <p>30</p>
+            </td>
+            <td>
+                <p>31</p>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    날짜 : <input type="text" id="date" value="" readonly>
+    <br />
+    내용 : <input type="text" id="content" value="">
+    <br />
+    <button type="button" id="btn">작성</button>
+</body>
+
+
+<script>
+    let td = null;
+
+    $("td > p").click(function (e) {
+        $("#date").val(this.innerText);
+        td = this; // <p>태그 출력됨
+    })
+
+    $("button").on("click", function (e) {
+        let content = $("#content").val();
+        $(td).parent().append(`<div>${content}</div>`);
+    })
+</script>
+
+</html>
