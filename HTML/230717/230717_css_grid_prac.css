@@ -1,0 +1,56 @@
+.container {
+    /* flex는 자식 요소를 inline-block으로 */
+    /* grid는   */
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+    grid-template-rows: repeat(4, minmax(100px, 1fr));
+    grid-template-areas:
+    'header header header header header header'
+    'aside main main main main aside2'
+    'aside main2 main2 main3 main3 aside2'
+    'footer footer footer footer footer footer';
+}
+
+.item {
+    font-size: 40px;
+    font-family:'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    background-color: #F94144;
+    grid-area: header;
+}
+
+.orange {
+    background-color: #F3722c;
+    grid-area: aside;
+}
+
+.yellow {
+    background-color: #F9C74F;
+    grid-area: main;
+}
+
+.yo {
+    background-color: #F8961E;
+    grid-area: main2;
+}
+
+.yg {
+    background-color: #90BE6D;
+    grid-area: main3;
+}
+
+.green {
+    background-color: #43AA8B;
+    grid-area: aside2;
+}
+
+.blue { 
+    background-color: #4444FF;
+    grid-area: footer;
+}

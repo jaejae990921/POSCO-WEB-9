@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    height: 50vh;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+}
+
+.item {
+
+}
+
+.item1 {
+    background-color: #F94144;
+    grid-column: auto / span 4;
+}
+
+.item2 {
+    background-color: #F3722c;
+    grid-row: auto / span 2;
+}
+
+.item3 {
+    background-color: #F9C74F;
+    grid-column: auto / span 2;
+}
+
+.item4 {
+    background-color: #43AA8B;
+    grid-row: auto / span 2;
+}
+
+.item5 {
+    background-color: #F8961E;
+}
+
+.item6 {
+    background-color: #90BE6D;
+}
+
+.item7 {
+    background-color: #4444FF;
+    grid-column: auto / span 4;
+}
