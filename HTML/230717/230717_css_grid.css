@@ -1,0 +1,98 @@
+.container {
+    /* flex는 자식 요소를 inline-block으로 */
+    /* grid는   */
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+    /* grid-template-columns: 200px 200px 200px; */
+    /* repeat을 이용하면 단축 가능 */
+    /* 1fr은 부모 크기의 비율 */
+
+    /* grid-template-rows: repeat(3, 200px); */
+
+    /* minmax(최소 최대) */
+    /* grid-template-columns: repeat(3, minmax(100px, auto)); */
+
+    /* row-gap: 20px; 세로 */
+    /* column-gap: 20px; 가로 */
+    /* gap: 20px; 단축 속성 */
+    /* gap: 20px 10px; 단축 속성 */
+
+    /* align-items: center; 수직 정렬 */
+    /* justify-items: center; 수평 정렬 */
+    /* place-items: center; 수직,수평 단축 속성 */
+    /* place-items: start center; 수직,수평 단축 속성 */
+    /* ~~~ items 속성은 item 요소(자식 요소)가 존재할 수 있는 영역에서 정렬 */
+
+    /* justify-content: center; 수평 정렬 */
+    /* align-content: center; 수직 정렬 */
+    /* place-content: center; 수직,수평 단축 속성 */
+    /* place-content: start center; 수직,수평 단축 속성 */
+    /* ~~~ content 속성은 container 영역 내에서 부모 요소 자체를 정렬 */
+
+    grid-template-areas:
+    'header header header'
+    'nav main aside'
+    'footer footer footer';
+    /* 행 열 맞춰야함 */
+}
+
+.item {
+    /* width: 100px;
+    height: 100px; */
+}
+
+.red {
+    /* order: 1; 순서 */
+    background-color: red;
+    /* grid-column: 1 / 4; 단축 속성 */
+    /* grid-column: 1 / span 3; 1부터 3칸을 합침 */
+    /* grid-column-end: auto / span 3; 원래위치에서 3칸을 합침 */
+    /* grid-column-start: 1; */
+    /* grid-column-end: 4; */
+    /* place-self: center; */
+
+    grid-area: header;
+}
+
+.orange {
+    /* order: 2; 작은 순서가 앞으로 order 안적으면 0 */
+    background-color: orange;
+    /* grid-row: auto / span 2; */
+    /* place-self: center; */
+
+    grid-area: nav;
+}
+
+.yellow {
+    background-color: yellow;
+    /* justify-self: center; 수평 정렬 */
+    /* align-self: center; 수직 정렬 */
+    /* place-self: center; 수직,수평 단축 속성 */
+
+    grid-area: main;
+}
+
+.green {
+    background-color: green;
+    /* width: 500px; */
+    /* z-index: 1; css에서 배운 z-index랑 똑같음 */
+
+    grid-area: aside;
+}
+
+.blue { 
+    background-color: blue;
+
+    grid-area: footer;
+}
+
+.navy {
+    background-color: navy;
+}
+
+.purple {
+    /* order: -1; */
+    background-color: purple;
+}
