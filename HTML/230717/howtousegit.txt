@@ -1,0 +1,3 @@
+주 branch(main)에서 새로운 branch를 생성할 때,
+습관처럼 git pull 사용하는게 좋음 => remote에 있는 최신상태를 내 local로 받아옴
+
