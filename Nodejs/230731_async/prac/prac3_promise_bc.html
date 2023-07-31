@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let delay = 1000;
+        function redC () {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'red';
+                    resolve();
+                }, delay);
+            });
+        }
+
+        function orangeC () {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'orange';
+                    resolve();
+                }, delay);
+            });
+        }
+
+        function yellowC () {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'yellow';
+                    resolve();
+                }, delay);
+            });
+        }
+
+        function greenC () {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'green';
+                    resolve();
+                }, delay);
+            });
+        }
+
+        function blueC () {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'blue';
+                    resolve();
+                }, delay);
+            });
+        }
+
+        redC().then(orangeC).then(yellowC).then(greenC).then(blueC);
+
+        // 모범답안 promise chaining
+        function chBgColor(newColor) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = newColor;
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        chBgColor('red').then( () => {
+            return chBgColor('orange');
+        }).then( () => {
+            return chBgColor('yellow');
+        }).then( () => {
+            return chBgColor('green');
+        }).then( () => {
+            return chBgColor('blue');
+        })
+
+        // 모범답안 async await
+        async function exec() {
+            await chBgColor('red');
+            await chBgColor('orange');
+            await chBgColor('yellow');
+            await chBgColor('green');
+            await chBgColor('blue');
+        }
+
+    </script>
+</body>
+</html>
