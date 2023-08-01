@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <h4>GET요청</h4>
+    <form action="/getForm" method="GET">
+        <input type="text" placeholder="id" name="id" required/>
+        <input type="password" placeholder="pw" name="pw" required/>
+        <button type="submit">제출</button>
+    </form>
+    <hr />
+    <h4>POST요청</h4>
+    <form action="/postForm" method="POST">
+        <input type="text" placeholder="id" name="id" /> <!-- readonly: 읽기전용, value로 값 넣어주면 넘어감 -->
+        <input type="password" placeholder="pw" name="pw" pattern="^([a-z0-9]{8,12})" /> <!-- disabled: 사용자가 입력할 수 없게 만듦, value로 값 넣어줘도 안넘어간다.-->
+        <input type="email" /><br />
+        <input type="radio" /><br />
+        <input type="checkbox" /><br />
+        <input type="tel" /><br />
+        <input type="number" /><br /> <!-- number: 숫자만 입력받음 // 모바일 환경에서 숫자 키보드만 뜸 -->
+        <input type="date" /><br />
+        <input type="time" /><br />
+        <input type="color" /><br />
+        <button type="submit">제출</button>
+
+        <!-- let a = "가 나 다 라 마 바 사" -->
+
+        <!-- a.replace(" ","") 처음 만나는 공백 삭제 -->
+        <!-- 가나 다 라 마 바 사 -->
+
+        <!-- a.replace(/ /g, "") 모든 공백 삭제 -->
+        <!-- 가나다라마바사 -->
+
+        <!-- a.replace(/ /g, "a") 모든 공백을 a로 -->
+        <!-- 가a나a다a라a마a바a사 -->
+    </form>
+</body>
+</html>
