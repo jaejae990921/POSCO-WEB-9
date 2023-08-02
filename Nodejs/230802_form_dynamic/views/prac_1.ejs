@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="register">
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" /><br />
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="gender" id="man" value="남자" />
+            <label for="man">남자</label>
+            <input type="radio" name="gender" id="woman" value="여자" />
+            <label for="woman">여자</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>생년월일</legend>
+            <select name="year" id="year">
+                <% for (let i=1980; i <=2023; i++) { %>
+                    <option value="<%= i %>">
+                        <%= i %>
+                    </option>
+                    <% } %>
+            </select>
+            <label for="year">년</label>
+            <select name="month" id="month">
+                <% for (let i=1; i <=12; i++) { %>
+                    <option value="<%= i %>">
+                        <%= i %>
+                    </option>
+                    <% } %>
+            </select>
+            <label for="month">월</label>
+            <select name="day" id="day">
+                <% for (let i=1; i <=31; i++) { %>
+                    <option value="<%= i %>">
+                        <%= i %>
+                    </option>
+                    <% } %>
+            </select>
+            <label for="day">일</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>관심사</legend>
+            <input type="checkbox" name="hobby" value="여행" />
+            <label for="travel">여행</label>
+            <input type="checkbox" name="hobby" value="패션" />
+            <label for="fashion">패션</label>
+            <input type="checkbox" name="hobby" value="음식" />
+            <label for="food">음식</label>
+        </fieldset>
+        <button type="button" onclick="ajaxGet()">회원가입</button><br />
+    </form>
+    <div class="result"></div>
+    <script>
+        const resultBox = document.querySelector('.result');
+        let hobby = [];
+
+        function ajaxGet() {
+            console.log('ajax get');
+            const form = document.forms['register']; // forms는 배열이다. -> form['이름']으로 접근, 인덱스도 가능
+            
+            $("input:checkbox[name='hobby']:checked").each(function () {
+                hobby.push($(this).val());
+            });
+
+            const data = {
+                name: form.name.value,
+                gender: form.gender.value,
+                year: form.year.value,
+                month: form.month.value,
+                day: form.day.value,
+                hobby: hobby,
+            }
+
+            $.ajax({
+                type: 'GET',
+                url: '/ajax',
+                data: data, // 키,값 이름똑같으면 하나로 써도 됨
+                success: (res) => {
+                    console.log('res', res);
+                    resultBox.textContent = `GET /ajax 요청완료 ${res.name}님은 ${res.gender}입니다. 생년월일은 ${res.year}년 ${res.month}월 ${res.day}일이며, 관심사는 ${res.hobby}입니다.`;
+                    resultBox.style.color = 'blue';
+                },
+            });
+        }
+    </script>
+</body>
+
+</html>
