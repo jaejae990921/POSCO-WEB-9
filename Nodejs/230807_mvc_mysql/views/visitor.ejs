@@ -31,11 +31,11 @@
         <tbody>
             <% for (let i = 0; i < data.length; i++) { %>
                 <tr id="tr_<%= data[i].id %>">
-                    <td> <%= data[i].id %> </td>
+                    <td><a href="/visitor/get?id=<%=data[i].id%>"><%= data[i].id %></a></td>
                     <td> <%= data[i].name %> </td>
                     <td> <%= data[i].comment %> </td>
-                    <td><button type="button">수정</button></td>
-                    <td><button type="button">삭제</button></td>
+                    <td><button type="button" onclick="editVisitor('<%= data[i].id %>')">수정</button></td>
+                    <td><button type="button" onclick="deleteVisitor('<%= data[i].id %>')">삭제</button></td>
                 </tr>
             <% } %>
         </tbody>
@@ -66,6 +66,43 @@
                 body.insertAdjacentHTML('beforeend', html);
                 // beforeend: 마지막 자식 노드 바로 앞에 삽입
             })
+        }
+
+        function editVisitor(id) {
+            const form = document.forms['visitor-form'];
+            axios ({
+                method: 'PATCH',
+                url: '/visitor/edit',
+                data: {
+                    id: Number(id),
+                    name: form.name.value,
+                    comment: form.comment.value,
+                },
+            }).then((res) => {
+                console.log('res', res)
+                if (res.data.result) { // true 넘어오면
+                    window.location.reload(); // 새로고침
+                }
+            })
+        }
+
+        function deleteVisitor(id) {
+            // confirm은 alert 처럼 창이 띄워지고 확인, 취소
+            if (!confirm('삭제하시겠습니까?')) {
+                return;
+            }
+            axios ({
+                method: 'DELETE',
+                url: '/visitor/delete',
+                data: {
+                    id: Number(id)
+                },
+            }).then((res) => {
+                console.log('res', res);
+                if (res.data.result) {
+                    window.location.reload();
+                }
+            });
         }
     </script>
 </body>
