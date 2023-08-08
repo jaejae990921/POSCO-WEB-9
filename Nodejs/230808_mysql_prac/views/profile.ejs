@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>프로필 페이지</h2>
+    <h2>
+        <%= name %>님 환영합니다.
+    </h2>
+
+    <form name="userInfo">
+        <label for="userId">아이디</label>
+        <input type="text" name="userId" value="<%= userId %>"><br />
+
+        <label for="pw">비밀번호</label>
+        <input type="password" name="pw" value="<%= pw %>"><br />
+
+        <label for="name">이름</label>
+        <input type="text" name="name" value="<%= name %>"><br />
+        <br />
+        <button type="button" onclick="editPro('<%= id %>')">수정</button>
+        <button type="button" onclick="deletePro('<%= id %>')">회원탈퇴</button>
+    </form>
+
+    <script>
+        function editPro(id) {
+            const form = document.forms['userInfo'];
+            axios ({
+                method: 'PATCH',
+                url: '/user/profile/edit',
+                data: {
+                    id: Number(id),
+                    userId: form.userId.value,
+                    pw: form.pw.value,
+                    name: form.name.value,
+                }
+            }).then((res) => {
+                if (res.data.result) { // true 넘어오면
+                    alert('수정 완료!');
+                    form.userId.value = res.data.userId;
+                    form.pw.value = res.data.pw;
+                    form.name.value = res.data.name;
+                    window.location.load();
+                }
+            })
+        }
+
+        function deletePro(id) {
+            if (!confirm('정말 회원탈퇴 하시겠습니까?')) return false;
+
+            const form = document.forms['userInfo'];
+            axios ({
+                method: 'DELETE',
+                url: '/user/profile/delete',
+                data: {
+                    id: Number(id)
+                }
+            }).then((res) => {
+                if (res.data.result) { // true 넘어오면
+                    window.location.href = '/';
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
