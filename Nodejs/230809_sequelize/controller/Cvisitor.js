@@ -9,7 +9,9 @@ exports.main = (req, res) => {
 exports.getVisitors = (req, res) => {
     // select * from visitor 랑 똑같음
     models.Visitor.findAll().then((result) => {
+        console.log('findAll', result); // 객체로 넘어감
         res.render('visitor', { data: result }); // 배열로 넘어감
+        // res.send({ data: result }); // 배열로 넘어감
     })
 };
 
