@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "simson",
+    "password": "simson",
+    "database": "kdt9",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "simson",
+    "password": "12345678",
+    "database": "kdt9",
+    "host": "db-posco-kdt9-simson.cptbhraiff7i.ap-southeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}
