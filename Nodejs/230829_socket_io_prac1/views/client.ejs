@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <form id="btn">
+        <button>hello</button>
+        <button>study</button>
+        <button>bye</button>
+    </form>
+    <b></b>
+
+    <script>
+        const btnForm = document.querySelector('#btn');
+        const socket = io();
+        
+        //폼이벤트
+        btnForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // 버튼의 텍스트를 서버로 보냄
+            socket.emit("btn", e.submitter.innerText);
+            // submitter : 이벤트가 발생한 요소를 반환
+            // innerText : 요소의 텍스트를 반환
+        });
+
+        // 서버에서 보낸 arg를 b태그의 텍스트로 변경
+        socket.on("backend_message", (arg) => {
+            const b = document.querySelector('b');
+            b.innerText = arg;
+        });
+        </script>
+</body>
+</html>
