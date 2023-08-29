@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+    <style>
+        div#chat-list {
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        div#chat-list div {
+            margin: 5px;
+            padding: 5px;
+            width: fit-content;
+            border-radius: 5px;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-list">
+        
+    </div>
+    <form id="chat">
+        <input type="text" id="message" placeholder="채팅내용" />
+        <button>채팅</button>
+    </form>
+
+    <script>
+        const chatForm = document.querySelector('#chat');
+        const chatList = document.querySelector('#chat-list');
+
+        // 클라이언트 소켓 연결
+        const socket = io();
+
+        // 채팅방 생성
+        const chatRoom = prompt('채팅방명을 입력하세요');
+        socket.emit("join", chatRoom);
+
+        // 브라우저 접속 시
+        socket.on('create', (res) => {
+            const ch = document.createElement('div');
+            ch.textContent = res;
+            chatList.appendChild(ch);
+        });
+
+        // 서버에서 보내주는 메시지
+        socket.on('chat', (res) => {
+            const ch = document.createElement('div');
+            ch.style.backgroundColor = 'white';
+            ch.style.alignSelf = 'flex-start';
+            ch.textContent = res;
+            chatList.appendChild(ch);
+        })
+
+        // 폼이벤트
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const msg = chatForm.querySelector('#message');
+            socket.emit('message', msg.value);
+
+            const ch = document.createElement('div');
+            ch.style.backgroundColor = 'yellow';
+            ch.style.alignSelf = 'flex-end';
+            ch.textContent = msg.value;
+            chatList.appendChild(ch);
+
+            msg.value = '';
+        });
+    </script>
+</body>
+</html>
