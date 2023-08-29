@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>Socket IO</div>
+    <ul>
+
+    </ul>
+    <form id="chat">
+        <input type="text" id="user" placeholder="사용자명">
+        <input type="text" id="message" placeholder="채팅내용" /><br />
+        <button>채팅</button>
+    </form>
+
+
+    <script>
+        // emit은 서버로 보내는 이벤트
+        // on은 서버에서 받는 이벤트
+        
+        const chatForm = document.querySelector('#chat');
+        const ul = document.querySelector('ul');
+        const socket = io();
+        //이벤트생성
+        // JSON.stringfy, JSON.parse 필요없음
+        socket.emit("open_message", { name: 'client', message: 'hello server' }, (res) => {
+            console.log(res);
+        });
+
+        
+        //폼이벤트
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const user = chatForm.querySelector('#user');
+            const message = chatForm.querySelector('#message');
+            // form_message로 데이터 전송
+            socket.emit("form_message", { name: user.value, message: message.value});
+            message.value = '';
+        });
+
+        // 서버에서 보낸 이벤트를 받아서 li 추가
+        socket.on("backend_message", (arg) => {
+            const li = document.createElement('li');
+            li.textContent = `${arg.name}: ${arg.message}`;
+            ul.appendChild(li);
+        });
+        </script>
+</body>
+</html>
