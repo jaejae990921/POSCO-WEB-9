@@ -1,0 +1,105 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.test {
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  background-color: rgb(247, 227, 189);
+  color: darkorange;
+}
+
+.two {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 50px;
+}
+
+div.four {
+  display: flex;
+}
+
+div.four > div {
+  width: 50px;
+}
+
+.red {
+  background-color: red;
+  height: 60px;
+}
+
+.orange {
+  background-color: orange;
+  height: 90px;
+}
+
+.yellow {
+  background-color: yellow;
+  height: 120px;
+}
+
+.green {
+  background-color: green;
+  height: 150px;
+}
+
+.blue {
+  background-color: blue;
+  height: 180px;
+}
+
+.navy {
+  background-color: navy;
+  height: 210px;
+}
+
+.purple {
+  background-color: purple;
+  height: 240px;
+}
