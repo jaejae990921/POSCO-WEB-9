@@ -11,3 +11,6 @@ test/
 # (현재폴더) 내에 존재하는 폴더 내부의 모든 파일 무시
 
 node_modules/
+
+package-lock.json
+# package-lock.json
