@@ -1,0 +1,32 @@
+@mixin circle($color) {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+@mixin anim($name, $number) {
+  animation: $name 3s linear infinite;
+  @keyframes #{$name} {
+    0% {
+      left: 0;
+      top: 0;
+    }
+    25% {
+      left: #{$number};
+      top: 0;
+    }
+    50% {
+      left: #{$number};
+      top: #{$number};
+    }
+    75% {
+      left: 0;
+      top: #{$number};
+    }
+    100% {
+      left: 0;
+      top: 0;
+    }
+  }
+}

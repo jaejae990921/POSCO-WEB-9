@@ -1,0 +1,18 @@
+@import './sasspracutils.scss';
+
+.circle {
+  position: relative;
+
+  &.pink {
+    @include circle(pink);
+    @include anim(pink, 100px);
+  }
+  &.skyblue {
+    @include circle(skyblue);
+    @include anim(skyblue, 200px);
+  }
+  &.green {
+    @include circle(green);
+    @include anim(green, 300px);
+  }
+}
