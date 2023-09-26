@@ -18,6 +18,11 @@ import RefFuncPrac from './09Ref/RefFuncPrac';
 
 import UseReduerPrac from './10Hook/useReducerPrac';
 
+//import WormComponent from './11Style/WormComponent';
+// import SassPrac from './11Style/SassPrac';
+// import StyledPrac from './11Style/StyledPrac';
+import StyledPrac2 from './11Style/StyledPrac2';
+
 function App() {
   return (
     <>
@@ -53,7 +58,13 @@ function App() {
       {/* <RefFuncPrac /> */}
 
       {/* 10Hook 실습 */}
-      <UseReduerPrac />
+      {/* <UseReduerPrac /> */}
+
+      {/* 11Style 실습 */}
+      {/* <WormComponent /> */}
+      {/* <SassPrac /> */}
+      {/* <StyledPrac /> */}
+      <StyledPrac2 />
     </>
   );
 }
