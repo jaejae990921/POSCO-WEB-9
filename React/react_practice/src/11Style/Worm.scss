@@ -1,0 +1,61 @@
+@import './wormutils.scss';
+
+.container {
+  position: relative;
+  width: 1200px;
+  height: 700px;
+}
+
+.circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  &.circle1 {
+    background-color: blue;
+    @include topLeft(250px, 400px);
+  }
+  &.circle2 {
+    background-color: rgb(63, 63, 233);
+    @include topLeft(330px, 550px);
+  }
+  &.circle3 {
+    background-color: rgb(18, 18, 165);
+    @include topLeft(400px, 620px);
+  }
+  &.circle4 {
+    background-color: rgb(122, 122, 237);
+    @include topLeft(400px, 700px);
+  }
+
+  &.circle5 {
+    background-color: rgb(59, 211, 227);
+    @include topLeft(400px, 800px);
+    z-index: 2;
+  }
+}
+
+.eye {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  @include topLeft(300px, 450px);
+}
+
+.eye1 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+  @include topLeft(310px, 450px);
+}
+
+.weed {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1;
+}

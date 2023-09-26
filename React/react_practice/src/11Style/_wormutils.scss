@@ -1,0 +1,4 @@
+@mixin topLeft($top, $left) {
+  top: $top;
+  left: $left;
+}
