@@ -1,27 +1,28 @@
-import PropsPrac1 from './04Props/PropsPrac1';
-import PropsPrac2 from './04Props/PropsPrac2';
-import Message from './05Event/Message';
-import StatePrac1 from './06State/StatePrac1';
-import StatePrac2 from './06State/StatePrac2';
-import StatePrac3 from './06State/StatePrac3';
-import StatePrac4 from './06State/StatePrac4';
-import UseStatePrac1 from './07UseState/UseStatePrac1';
-import UseStatePrac2 from './07UseState/UseStatePrac2';
-import UseStatePrac3 from './07UseState/UseStatePrac3';
-import UseStatePrac4 from './07UseState/UseStatePrac4';
-import UseStatePrac5 from './07UseState/UseStatePrac5';
+// import PropsPrac1 from './04Props/PropsPrac1';
+// import PropsPrac2 from './04Props/PropsPrac2';
+// import Message from './05Event/Message';
+// import StatePrac1 from './06State/StatePrac1';
+// import StatePrac2 from './06State/StatePrac2';
+// import StatePrac3 from './06State/StatePrac3';
+// import StatePrac4 from './06State/StatePrac4';
+// import UseStatePrac1 from './07UseState/UseStatePrac1';
+// import UseStatePrac2 from './07UseState/UseStatePrac2';
+// import UseStatePrac3 from './07UseState/UseStatePrac3';
+// import UseStatePrac4 from './07UseState/UseStatePrac4';
+// import UseStatePrac5 from './07UseState/UseStatePrac5';
 
-import LifeCyclePrac from './08Lifecycle/LifeCyclePrac';
-import LifeCyclePrac2 from './08Lifecycle/LifeCyclePrac2';
-import RefClassPrac from './09Ref/RefClassPrac';
-import RefFuncPrac from './09Ref/RefFuncPrac';
+// import LifeCyclePrac from './08Lifecycle/LifeCyclePrac';
+// import LifeCyclePrac2 from './08Lifecycle/LifeCyclePrac2';
+// import RefClassPrac from './09Ref/RefClassPrac';
+// import RefFuncPrac from './09Ref/RefFuncPrac';
 
-import UseReduerPrac from './10Hook/useReducerPrac';
+// import UseReduerPrac from './10Hook/useReducerPrac';
 
 //import WormComponent from './11Style/WormComponent';
 // import SassPrac from './11Style/SassPrac';
 // import StyledPrac from './11Style/StyledPrac';
-import StyledPrac2 from './11Style/StyledPrac2';
+// import StyledPrac2 from './11Style/StyledPrac2';
+import Router from './12Router/Router';
 
 function App() {
   return (
@@ -64,7 +65,10 @@ function App() {
       {/* <WormComponent /> */}
       {/* <SassPrac /> */}
       {/* <StyledPrac /> */}
-      <StyledPrac2 />
+      {/* <StyledPrac2 /> */}
+
+      {/* 12Router 실습 */}
+      <Router />
     </>
   );
 }
