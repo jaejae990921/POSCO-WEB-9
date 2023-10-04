@@ -22,7 +22,14 @@
 // import SassPrac from './11Style/SassPrac';
 // import StyledPrac from './11Style/StyledPrac';
 // import StyledPrac2 from './11Style/StyledPrac2';
-import Router from './12Router/Router';
+// import Router from './12Router/Router';
+
+import FormPrac from './13Form/FormPrac';
+
+import ThemeSelector from './14Context/ThemeSelector';
+import LangSelector from './14Context/LangSelector';
+import { SettingProvider } from './14Context/store/setting-context';
+import './App.css';
 
 function App() {
   return (
@@ -68,7 +75,16 @@ function App() {
       {/* <StyledPrac2 /> */}
 
       {/* 12Router 실습 */}
-      <Router />
+      {/* <Router /> */}
+
+      {/* 13Form 실습 */}
+      {/* <FormPrac /> */}
+
+      {/* 14Context 실습 */}
+      <SettingProvider>
+        <ThemeSelector />
+        <LangSelector />
+      </SettingProvider>
     </>
   );
 }
