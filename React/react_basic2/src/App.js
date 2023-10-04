@@ -1,51 +1,13 @@
-// import LifeCycleFunc from './08Lifecycle/LifeCycleFunc';
-// import RefSampleClass1 from './09Ref/RefSampleClass1';
-// import RefSampleClass2 from './09Ref/RefSampleClass2';
-// import RefSampleFunc1 from './09Ref/RefSampleFunc1';
-// import RefSampleFunc2 from './09Ref/RefSampleFunc2';
-// import RefSampleFunc3 from './09Ref/RefSampleFunc3';
-// import UesMemo from './10Hook/useMemo';
-// import UseCallback from './10Hook/useCallback';
-// import UseReducer from './10Hook/useReducer';
-// import Style from './11Style/Style';
-// import SassComponent from './11Style/SassComponent';
-// import StyledComponent from './11Style/StyledComponent';
-import Header from './12Router/Header';
-// import Router from './12Router/Router';
-import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
+import { LanguageProvider } from './14Context/store/lang-context';
+import LanguageSelector from './14Context/LangSelector';
 
 function App() {
   return (
     <>
-      {/* <LifeCycleFunc /> */}
-
-      {/* 09Ref */}
-      {/* <RefSampleClass1 /> */}
-      {/* <RefSampleClass1 /> */}
-      {/* <RefSampleClass2 /> */}
-      {/* <RefSampleClass2 /> */}
-
-      {/* <RefSampleFunc1 /> */}
-      {/* <RefSampleFunc2 /> */}
-      {/* <RefSampleFunc3 /> */}
-
-      {/* 10Hook */}
-      {/* <UesMemo /> */}
-      {/* <UseCallback /> */}
-      {/* <UseReducer /> */}
-
-      {/* 11Style */}
-      {/* <Style /> */}
-      {/* <SassComponent /> */}
-      {/* <StyledComponent /> */}
-
-      {/* 12Router */}
-      {/* ver1 */}
-      {/* <Router /> */}
-
-      {/* ver2 */}
-      {/* <Header /> */}
-      {/* <Outlet /> */}
+      <LanguageProvider>
+        <LanguageSelector />
+      </LanguageProvider>
     </>
   );
 }
