@@ -24,12 +24,15 @@
 // import StyledPrac2 from './11Style/StyledPrac2';
 // import Router from './12Router/Router';
 
-import FormPrac from './13Form/FormPrac';
+// import FormPrac from './13Form/FormPrac';
 
-import ThemeSelector from './14Context/ThemeSelector';
-import LangSelector from './14Context/LangSelector';
-import { SettingProvider } from './14Context/store/setting-context';
-import './App.css';
+// import ThemeSelector from './14Context/ThemeSelector';
+// import LangSelector from './14Context/LangSelector';
+// import { SettingProvider } from './14Context/store/setting-context';
+// import './App.css';
+import Cart from './14Context/Cart';
+import ProductList from './14Context/ProductList';
+import { CartProvider } from './14Context/store/cart-context';
 
 function App() {
   return (
@@ -81,10 +84,14 @@ function App() {
       {/* <FormPrac /> */}
 
       {/* 14Context 실습 */}
-      <SettingProvider>
+      {/* <SettingProvider>
         <ThemeSelector />
         <LangSelector />
-      </SettingProvider>
+      </SettingProvider> */}
+      <CartProvider>
+        <ProductList />
+        <Cart />
+      </CartProvider>
     </>
   );
 }
