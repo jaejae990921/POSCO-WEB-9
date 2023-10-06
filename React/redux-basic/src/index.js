@@ -1,5 +1,5 @@
 // 리덕스를 이용한 숫자 증감 코드
-import { createStore } from 'redux';
+// import { createStore } from 'redux';
 
 // const add = document.querySelector('#add');
 // const minus = document.querySelector('#minus');
@@ -57,7 +57,7 @@ import { createStore } from 'redux';
 // });
 
 ///// ------ 실습 1 ------ /////
-const input = document.querySelector('#input');
+/* const input = document.querySelector('#input');
 const add = document.querySelector('#add');
 const ul = document.querySelector('#ul');
 
@@ -105,3 +105,23 @@ todoStore.subscribe(() => {
     ul.append(li); // ul에 li 추가
   });
 });
+*/
+
+///// ------ 231006 react redux ------ /////
+import React from 'react';
+import ReactDom from 'react-dom/client';
+import App from './App';
+import { Provider } from 'react-redux';
+// import store from './store/todo';
+// import cart from './store/cart';
+import store from './store';
+
+const root = ReactDom.createRoot(document.getElementById('root'));
+
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
